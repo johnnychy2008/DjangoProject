@@ -7,3 +7,13 @@ python manage.py compilemessages          # Create translation files
 python manage.py collectstatic --noinput  # Collect static files
 sudo apachectl graceful                   # Restart the server, e.g. Apache
 python manage.py test --noinput app1 app2 # Run the tests
+pip install virtualenvwrapper-win
+mkvirtualenv DjangoProject
+workon DjangoProject
+pip install django
+cd
+mkdir johnson
+cd . \johnson\
+django-admin startproject DjangoProject
+cd. \DjangoProject\
+python manage.py runserver
