@@ -1,0 +1,9 @@
+#!/bin/bash
+source /webapps/DeployDjango/activate     # Activate the virtualenv
+cd /webapps/DeployDjango
+pip install -r REQUIREMENTS.txt           # Install or upgrade dependencies
+python manage.py migrate                  # Apply South's database migrations
+python manage.py compilemessages          # Create translation files
+python manage.py collectstatic --noinput  # Collect static files
+sudo apachectl graceful                   # Restart the server, e.g. Apache
+python manage.py test --noinput app1 app2 # Run the tests
